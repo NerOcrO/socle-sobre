@@ -1,0 +1,22 @@
+{
+  "name": "HTMX",
+  "description": "POC HTMX",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "id": "/",
+  "icons": [
+    {
+      "sizes": "48x48",
+      "src": "favicon.ico",
+      "type": "image/ico"
+    },
+    {
+      "sizes": "any",
+      "src": "marianne.png",
+      "type": "image/png"
+    }
+  ]
+}

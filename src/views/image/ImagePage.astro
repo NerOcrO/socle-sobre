@@ -1,0 +1,32 @@
+---
+import htmx from "./htmx.png"
+---
+
+<div class="fr-grid-row">
+  <h1>Image</h1>
+  <img src={htmx.src} alt="test" height="200" width="300" />
+  <h1>SVG</h1>
+  <svg xmlns="http://www.w3.org/2000/svg" width="467" height="462">
+    <rect
+      x="80"
+      y="60"
+      width="250"
+      height="250"
+      rx="20"
+      fill="red"
+      stroke="black"
+      stroke-width={2}
+    />
+    <rect
+      x="140"
+      y="120"
+      width="250"
+      height="250"
+      rx="40"
+      fill="blue"
+      stroke="black"
+      stroke-width={2}
+      fill-opacity={0.7}
+    />
+  </svg>
+</div>

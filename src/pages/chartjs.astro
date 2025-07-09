@@ -1,0 +1,14 @@
+---
+import { chartJsController } from "../controllers/chartJsController"
+import ChartjsPage from "../views/chartjs/ChartjsPage.astro"
+import Layout from "../views/transverse/Layout.astro"
+
+const viewModel = chartJsController()
+---
+
+<Layout title="ChartJs">
+  <ChartjsPage
+    data={viewModel.data}
+    labels={viewModel.labels}
+  />
+</Layout>

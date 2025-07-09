@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16.6-alpine # Conserver la même version de l'hébergeur
+    environment:
+      POSTGRES_DB: socle
+      POSTGRES_USER: socle
+      POSTGRES_PASSWORD: socle
+    command: ["postgres", "-c", "log_statement=all", "-c", "max_connections=30"]
+    healthcheck:
+      test: pg_isready -U socle
+      interval: 10s
+      timeout: 5s
+      retries: 5

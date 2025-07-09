@@ -1,0 +1,11 @@
+---
+import { accueilController } from "../controllers/accueilController"
+import AccueilPage from "../views/accueil/AccueilPage.astro"
+import Layout from "../views/transverse/Layout.astro"
+
+const viewModel = accueilController()
+---
+
+<Layout title="Accueil">
+  <AccueilPage clikedApi={viewModel.clikedApi} message={viewModel.message} />
+</Layout>

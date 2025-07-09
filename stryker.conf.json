@@ -1,0 +1,20 @@
+{
+  "checkers": ["typescript"],
+  "disableTypeChecks": true,
+  "htmlReporter": { "fileName": "reports/mutation/mutation.html" },
+  "ignorePatterns": [
+    ".*",
+    "coverage",
+    "public",
+    "reports",
+    "src/pages",
+    "src/views",
+    "yarn.lock"
+  ],
+  "ignoreStatic": true,
+  "logLevel": "info",
+  "mutate": ["src/**/*.ts", "!src/**/*.test.ts"],
+  "packageManager": "yarn",
+  "reporters": ["html", "progress"],
+  "testRunner": "vitest"
+}
