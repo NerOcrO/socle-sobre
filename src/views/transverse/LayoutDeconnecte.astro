@@ -1,0 +1,36 @@
+---
+import Footer from "./Footer.astro"
+import Skiplink from "./Skiplink.astro"
+
+type Props = {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="fr" dir="ltr" data-fr-scheme="light">
+  <head>
+    <meta charset="UTF-8">
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/manifest.webmanifest" rel="manifest">
+    <meta content="#ffffff" name="theme-color">
+    <link rel="stylesheet" href="/dsfr-1.13.2/dsfr.min.css">
+    <link
+      rel="stylesheet"
+      href="/dsfr-1.13.2/utility/icons/system/icons-system.min.css"
+    >
+  </head>
+  <body>
+    <Skiplink />
+    <main id="content" class="fr-m-2w">
+      <div class="fr-container">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+    <script src="/dsfr-1.13.2/dsfr.module.min.js" is:inline></script>
+  </body>
+</html>
