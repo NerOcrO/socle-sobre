@@ -1,0 +1,25 @@
+---
+import "./AccueilPage.css"
+
+type Props = {
+  clikedApi: string
+  message: string
+}
+
+const { clikedApi, message } = Astro.props
+---
+
+<div>
+  <h1>Message dynamique : {message}</h1>
+  <br />
+  <button
+    class="fr-btn"
+    data-hx-get={clikedApi}
+    data-hx-trigger="click"
+    data-hx-target=".toaster"
+    data-hx-swap="innerHTML"
+  >
+    Click Me!
+  </button>
+  <div class="toaster"></div>
+</div>

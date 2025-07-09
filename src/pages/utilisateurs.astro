@@ -1,0 +1,14 @@
+---
+import { utilisateursController } from "../controllers/utilisateursController"
+import Layout from "../views/transverse/Layout.astro"
+import UtilisateursPage from "../views/utilisateurs/UtilisateursPage.astro"
+
+const viewModel = await utilisateursController()
+---
+
+<Layout title="Les utilisateurs avec Prisma">
+  <UtilisateursPage
+    ajouterUtilisateurApi={viewModel.ajouterUtilisateurApi}
+    utilisateurs={viewModel.utilisateurs}
+  />
+</Layout>

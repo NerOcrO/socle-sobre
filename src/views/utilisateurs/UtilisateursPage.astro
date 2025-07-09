@@ -1,0 +1,36 @@
+---
+import Utilisateur from "./Utilisateur.astro"
+import { UtilisateursViewModel } from "../../presenters/utilisateursPresenter"
+
+type Props = {
+  ajouterUtilisateurApi: string
+  utilisateurs: UtilisateursViewModel["utilisateurs"]
+}
+
+const { ajouterUtilisateurApi, utilisateurs } = Astro.props
+---
+
+<div id="swap-alert" role="alert"></div>
+<form
+  data-hx-post={ajouterUtilisateurApi}
+  data-hx-target=".user"
+  data-hx-swap="afterbegin"
+  data-hx-disabled-elt="find button"
+>
+  <label class="fr-label" for="username">Nom</label>
+  <input
+    class="fr-input fr-mb-2w"
+    type="text"
+    id="username"
+    name="username"
+    required
+  />
+  <button class="fr-btn" type="submit">Ajouter un utilisateur</button>
+</form>
+<ul class="user">
+  {
+    utilisateurs.map((utilisateur) => (
+      <Utilisateur utilisateur={utilisateur.name} />
+    ))
+  }
+</ul>

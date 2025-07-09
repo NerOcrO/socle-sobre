@@ -1,0 +1,7 @@
+.fr-background-alt--grey {
+  --idle: transparent;
+  --hover: var(--background-alt-grey-hover) !important;
+  --active: var(--background-alt-grey-active) !important;
+
+  background-color: var(--background-alt-grey) !important;
+}

@@ -1,0 +1,35 @@
+{
+  "component": {
+    "prefix": "_component",
+    "scope": "astro",
+    "description": "Template d'un composant (presenter)",
+    "body": [
+      "---",
+      "type Props = {",
+      "  readModel: XXXReadModel",
+      "}",
+      "",
+      "const { readModel } = Astro.props",
+      "---",
+      "",
+      "<div></div>",
+      "",
+    ],
+  },
+  "page": {
+    "prefix": "_page",
+    "scope": "astro",
+    "description": "Template d'une page (controller)",
+    "body": [
+      "---",
+      "// Validation des searchParams au besoin",
+      "// Instanciation du loader ou repository",
+      "// Instanciation du use case",
+      "---",
+      "<Layout title=\"XXX\">",
+      "  <XXXPage readModel={readModel} />",
+      "</Layout>",
+      "",
+    ],
+  },
+}

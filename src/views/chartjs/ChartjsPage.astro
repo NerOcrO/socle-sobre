@@ -1,0 +1,39 @@
+---
+type Props = {
+  data: Array<number>
+  labels: Array<string>
+}
+
+const { data, labels } = Astro.props
+---
+
+<div>
+  <canvas id="myChart" data-data={data} data-labels={labels}></canvas>
+</div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script is:inline>
+const ctx = document.getElementById("myChart")
+
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: document.querySelector("canvas").dataset.labels.split(","),
+    datasets: [
+      {
+        label: "# of Votes",
+        data: document.querySelector("canvas").dataset.data.split(","),
+        borderWidth: 1,
+      },
+    ],
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true,
+      },
+    },
+  },
+})
+</script>

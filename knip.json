@@ -1,0 +1,24 @@
+{
+  "astro": {
+    "config": [
+      "astro.config.ts"
+    ],
+    "entry": [
+      "src/pages/**/*.{astro,ts}"
+    ]
+  },
+  "project": ["**/*.{astro,ts}"],
+  "rules": {
+    "dependencies": "off",
+    "unlisted": "off",
+    "binaries": "off",
+    "files": "error",
+    "exports": "error",
+    "types": "error",
+    "nsExports": "error",
+    "nsTypes": "error",
+    "enumMembers": "error",
+    "classMembers": "error",
+    "duplicates": "error"
+  }
+}
